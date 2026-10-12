@@ -62,7 +62,7 @@ export function Ticker() {
 }
 
 export function Stats() {
-  const stats = [
+  const stats: [string, string][] = [
     ["$499", "packages start here"],
     ["4+ hrs", "of hosted play on Premium"],
     ["1 host", "runs contests and the queue"],
@@ -190,7 +190,7 @@ export function Packages({ onChoose }: { onChoose: (p: PackageId) => void }) {
 }
 
 export function HowItWorks() {
-  const steps = [
+  const steps: [string, string][] = [
     ["Tell us the event", "Date, place, crowd size. Two minutes, tops."],
     ["Get your quote", "A clear price with your package and add-ons."],
     ["Lock the date", "Sign the agreement and pay the deposit."],
@@ -232,7 +232,7 @@ export function HowItWorks() {
   );
 }
 
-const CHECKLIST = [
+const CHECKLIST: [string, string][] = [
   ["Parking", "Level space for the trailer plus a guest walk-up area."],
   ["Power", "Shore power access preferred. Generator option available."],
   ["Access", "A clear route for a towed trailer and a venue contact on the day."],
@@ -240,7 +240,7 @@ const CHECKLIST = [
   ["Weather", "Enclosed and climate-controlled. Play goes on."],
   ["Safety", "Enclosed hitting area, impact screen, padding and a marked spectator boundary."],
 ];
-const SPECS = [
+const SPECS: [string, string][] = [
   ["Trailer dimensions", "TBD"],
   ["Power specs", "TBD"],
   ["Setup time", "TBD"],
@@ -287,7 +287,7 @@ export function VenueInfo() {
   );
 }
 
-const FAQS = [
+const FAQS: [string, string][] = [
   ["Do guests need golf experience?", "Not at all. The simulator works for first-timers and scratch golfers alike, and the attendant helps everyone get a swing in."],
   ["What happens if it rains?", "Nothing changes. Play happens inside an enclosed, climate-controlled trailer, so there are no rain delays."],
   ["How far do you travel?", "We cover a local service radius at no extra charge. Events farther out get a travel fee included in your quote."],
