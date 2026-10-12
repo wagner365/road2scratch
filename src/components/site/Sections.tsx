@@ -81,7 +81,7 @@ export function Stats() {
 }
 
 export function WhoBooks({ onQuote }: { onQuote: (p: PackageId, eventType?: string) => void }) {
-  const [active, setActive] = useState(SEGMENTS[0].id);
+  const [active, setActive] = useState(SEGMENTS[0]!.id);
   const seg = SEGMENTS.find((s) => s.id === active)!;
   const pkg = PACKAGES.find((p) => p.id === seg.pkg)!;
   return (

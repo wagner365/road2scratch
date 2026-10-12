@@ -35,7 +35,7 @@ export function QuoteBuilder({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [notes, setNotes] = useState("");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Partial<Record<"event_date" | "name" | "email" | "form", string>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -47,7 +47,7 @@ export function QuoteBuilder({
     if (!parsed.success) {
       const errs: Record<string, string> = {};
       parsed.error.issues.forEach((i) => (errs[i.path[0] as string] = i.message));
-      setErrors(errs);
+      setErrors(errs as typeof errors);
       return;
     }
     setErrors({});
