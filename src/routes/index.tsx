@@ -1,24 +1,61 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import {
+  ClosingCta,
+  Faq,
+  Footer,
+  HowItWorks,
+  Packages,
+  Stats,
+  Ticker,
+  VenueInfo,
+  WhoBooks,
+} from "@/components/site/Sections";
+import { QuoteBuilder, type QuoteState } from "@/components/site/QuoteBuilder";
+import type { PackageId } from "@/lib/site-data";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Road 2 Scratch | Mobile Golf Simulator Rentals for Events";
+const DESC =
+  "A climate-controlled golf simulator trailer, live leaderboard and on-site attendant for corporate events, golf outings, weddings and parties. Packages from $499.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [quote, setQuote] = useState<QuoteState>({ pkg: "event", eventType: "" });
+  const pick = (pkg: PackageId, eventType?: string) => {
+    setQuote((q) => ({ pkg, eventType: eventType ?? q.eventType }));
+    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Ticker />
+        <Stats />
+        <WhoBooks onQuote={pick} />
+        <Packages onChoose={(p) => pick(p)} />
+        <HowItWorks />
+        <VenueInfo />
+        <QuoteBuilder value={quote} onChange={setQuote} />
+        <Faq />
+        <ClosingCta />
+      </main>
+      <Footer />
+    </>
   );
 }
