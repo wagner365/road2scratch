@@ -24,7 +24,7 @@ export function Header() {
     <>
       <a
         href="#quote"
-        className="bg-sunset block px-4 py-2 text-center text-sm font-semibold text-emerald"
+        className="bg-sunset relative z-[60] block px-4 py-2 text-center text-sm font-semibold text-emerald"
       >
         Now booking founding events for launch season. Request a date →
       </a>

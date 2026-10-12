@@ -31,7 +31,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="bg-hero relative -mt-24 overflow-hidden pt-36 pb-20 text-emerald-foreground">
+    <section id="top" className="bg-hero relative -mt-[5.5rem] overflow-hidden pt-36 pb-20 text-emerald-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.1fr_1fr]">
         <div>
           <p className="label-mono text-fairway">Mobile golf simulator · Hosted events</p>
