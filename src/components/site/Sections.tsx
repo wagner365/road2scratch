@@ -223,9 +223,6 @@ export function HowItWorks() {
             height={800}
             className="h-72 w-full object-cover sm:h-96"
           />
-          <figcaption className="glass-dark label-mono absolute bottom-4 left-4 rounded-full px-3 py-1.5">
-            Placeholder image · swap in your event photo
-          </figcaption>
         </figure>
       </div>
     </section>
