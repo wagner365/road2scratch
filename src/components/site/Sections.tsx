@@ -337,10 +337,9 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 text-sm sm:flex-row sm:justify-between">
         <p>© 2026 Road 2 Scratch · Mobile Golf Simulator</p>
         <div className="label-mono flex flex-wrap gap-x-6 gap-y-2">
-          <span>hello@road2scratch.com (placeholder)</span>
-          <span>(555) 000-0000 (placeholder)</span>
-          <span>@road2scratch (placeholder)</span>
-          <span>Service area: TBD</span>
+          <a href="tel:4403900641">(440) 390-0641</a>
+          <span>@road2scratch</span>
+          <span>Service area: Midwest</span>
         </div>
       </div>
     </footer>
